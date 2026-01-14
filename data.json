@@ -1,0 +1,60 @@
+{
+  "Users": {
+    "user_id": "Primary Key",
+    "name": "String",
+    "email": "Email",
+    "password": "MD5",
+    "contact_number": "Number Pattern +COD (XX) X XXXX-XXXX",
+    "address": "String",
+    "role": "String"
+  },
+  "Products": {
+    "product_id": "Primary Key",
+    "name": "String",
+    "description": "Long Text",
+    "price": "Currency",
+    "stock_quantity": "Integer"
+  },
+  "Services": {
+    "service_id": "Primary Key",
+    "name": "String",
+    "description": "Long Text",
+    "price": "Currency",
+    "stock_quantity": "Integer"
+  },
+  "Combos": {
+    "combo_id": "Primary Key",
+    "name": "String",
+    "description":"Long Text",
+    "price": "Currency",
+    "stock_quantity": "Integer"
+  },
+  "Combo_items": {
+    "combo_id": "Foreing Key",
+    "product_id": "Foreing Key (nullable)",
+    "service_id": "Foreing Key (nullable)"
+  },
+  "Budgets": {
+    "budget_id": "Primary Key",
+    "session_id": "Browser session",
+    "product_id": "Foreing Key (nullable)",
+    "service_id": "Foreing Key (nullable)",
+    "combo_id": "Foreing Key (nullable)",
+    "quantity": "Interger",
+    "budget_price": "Currency"
+  }, 
+  "Orders": {
+    "order_id": "Primary Key",
+    "user_id": "Foreing Key (nullable)",
+    "total_price": "Currency",
+    "status": "PENDING | PAID | REFUSED"
+  },
+  "Order_items": {
+    "order_id": "Foreing Key",
+    "product_id": "Foreing Key (nullable)",
+    "service_id": "Foreing Key (nullable)",
+    "combo_id": "Foreing Key (nullable)",
+    "quantity": "Interger",
+    "items_list": "Array<items>"
+  }
+}
